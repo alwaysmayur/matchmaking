@@ -26,26 +26,6 @@ A lightweight matchmaking engine for creative gigs — built with Next.js 15 and
 
 ## 📁 Project Structure
 
-├── app/
-│ ├── api/
-│ │ └── match/route.ts # API route to process brief & return talent matches
-│ ├── components/
-│ │ ├── GigDetails.tsx # Renders detailed gig info
-│ │ ├── QuerySummary.tsx # Shows what the engine parsed from the query
-│ │ └── TalentCard.tsx # Displays a single talent with score + rationale
-│ └── page.tsx # UI page that runs the query and shows matches
-│
-├── lib/
-│ ├── matchmaking.ts # Main matchmaking logic (scoring system)
-│ └── parser.ts # Converts natural language → structured gig
-│
-├── data/
-│ ├── clients.json # Mock client profiles
-│ ├── gigs.json # Mock gig briefs
-│ └── talents.json # Mock talent database (10k+ style)
-│
-├── types/
-│ └── index.ts # Type definitions for Client, Talent, Gig, etc.
 
 ---
 
