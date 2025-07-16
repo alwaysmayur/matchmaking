@@ -24,11 +24,6 @@ A lightweight matchmaking engine for creative gigs — built with Next.js 15 and
 
 ---
 
-## 📁 Project Structure
-
-
----
-
 ## ⚙️ Getting Started
 
 ```bash
