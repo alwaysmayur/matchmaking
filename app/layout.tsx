@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-// @ts-expect-error Next.js bundles this global stylesheet at runtime.
 import "./globals.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
