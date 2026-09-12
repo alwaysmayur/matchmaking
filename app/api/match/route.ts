@@ -13,13 +13,26 @@ type MatchRequestBody = {
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as MatchRequestBody;
-    const { query, page = 1, pageSize = 5 } = body;
+    const { page = 1, pageSize = 5 } = body;
+    const query = body.query?.trim();
 
     if (!query) {
       return NextResponse.json(
         { error: "Search query is required" },
         { status: 400 }
       );
+    }
+    if (query.length > 500) {
+      return NextResponse.json(
+        { error: "Search query is too long (max 500 characters)" },
+        { status: 400 }
+      );
+    }
+    if (!Number.isInteger(page) || page < 1) {
+      return NextResponse.json({ error: "Invalid page number" }, { status: 400 });
+    }
+    if (!Number.isInteger(pageSize) || pageSize < 1 || pageSize > 50) {
+      return NextResponse.json({ error: "Invalid page size" }, { status: 400 });
     }
 
     const parsedGig = parseQueryToGig(query);
